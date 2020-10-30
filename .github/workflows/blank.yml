@@ -42,6 +42,7 @@ jobs:
 
         # Runs a single command using the runners shell
       - name: Run a one-line script
+        id: jrun
         run: |
           echo Hello, world!
           sudo cp /usr/share/zoneinfo/Asia/Shanghai  /etc/localtime
@@ -50,10 +51,13 @@ jobs:
           date -R
           cd $GITHUB_WORKSPACE
           java -jar yuyue.jar
-          uses: actions/upload-artiface@v2
-          with:
-            name: img_zip
-            path: ./img/
+          echo "::set-end name=status::success"
+          
+      - name: upload img
+        uses: actions/upload-artifact@v2
+        with:
+          name: img_zip
+          path: ./img/
           
 
       # Runs a set of commands using the runners shell
