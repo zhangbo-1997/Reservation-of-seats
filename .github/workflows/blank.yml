@@ -35,8 +35,6 @@ jobs:
       - name: Install env
         run: |
           sudo rm -rf /etc/apt/sources.list.d/*
-          sudo apt-get update
-          sudo apt-get install ntpdate
 
       - name: Build with Maven
         run: java -version
@@ -47,12 +45,9 @@ jobs:
         run: |
           echo Hello, world!
           sudo cp /usr/share/zoneinfo/Asia/Shanghai  /etc/localtime
-          sudo ntpdate time.windows.com
-          hwclock --systohc
           firefox -v
           geckodriver --version
           date -R
-          date
           cd $GITHUB_WORKSPACE
           java -jar yuyue.jar
           echo "::set-end name=status::success"
