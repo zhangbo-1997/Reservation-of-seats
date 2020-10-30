@@ -55,7 +55,6 @@ jobs:
           
       - name: upload img
         uses: actions/upload-artifact@v2
-        if: steps.jrun.end.status == 'success'
         with:
           name: img_zip
           path: ./img/
