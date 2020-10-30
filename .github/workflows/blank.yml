@@ -46,6 +46,7 @@ jobs:
           echo Hello, world!
           firefox -v
           geckodriver --version
+          date -R
           
 
       # Runs a set of commands using the runners shell
