@@ -9,6 +9,10 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  watch:
+    types: started
+  #schedule:
+  #  - cron: 0 8 * * 5
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -43,6 +47,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install firefox
           firefox -v
+          geckodriver --version
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
