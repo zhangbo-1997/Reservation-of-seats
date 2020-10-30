@@ -46,6 +46,7 @@ jobs:
         run: |
           echo Hello, world!
           sudo cp /usr/share/zoneinfo/Asia/Shanghai  /etc/localtime
+          sudo ntpdate time.windows.com
           firefox -v
           geckodriver --version
           date -R
