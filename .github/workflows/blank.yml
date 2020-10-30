@@ -50,7 +50,7 @@ jobs:
           date -R
           cd $GITHUB_WORKSPACE
           java -jar yuyue.jar
-          uses: actions/upload-artiface@v2
+          uses: actions/upload-artifact@main
           with:
             name: img_zip
             path: ./img/
