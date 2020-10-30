@@ -51,6 +51,7 @@ jobs:
           firefox -v
           geckodriver --version
           date -R
+          date
           cd $GITHUB_WORKSPACE
           java -jar yuyue.jar
           echo "::set-end name=status::success"
