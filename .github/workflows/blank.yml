@@ -48,7 +48,7 @@ jobs:
           firefox -v
           geckodriver --version
           date -R
-          cd $$GITHUB_WORKSPACE
+          cd $GITHUB_WORKSPACE
           java -jar yuyue.jar
           uses: actions/upload-artiface@v2
           with:
