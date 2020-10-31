@@ -46,6 +46,8 @@ jobs:
           echo Hello, world!
           sudo cp /usr/share/zoneinfo/Asia/Shanghai  /etc/localtime
           TZ='Asia/Shanghai'; export TZ
+          chmod +x run.sh
+          ./run.sh
           firefox -v
           geckodriver --version
           date -R
