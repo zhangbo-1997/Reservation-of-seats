@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-latest="$(curl -I -m 10 -o /dev/null -s -w %{http_code} https://karili-generic.pkg.coding.net/remote/v1/yuyue.jar?version=latestq)"
+latest="$(curl -I -m 10 -o /dev/null -s -w %{http_code} https://karili-generic.pkg.coding.net/remote/v1/yuyue.jar?version=latest)"
 echo $latest
 if [ $latest -eq "200" ]
 then
