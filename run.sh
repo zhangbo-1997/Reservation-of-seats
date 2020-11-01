@@ -1,8 +1,8 @@
 #!/bin/bash
 #
-latest="$(curl -I -m 10 -o /dev/null -s -w %{http_code} https://karili-generic.pkg.coding.net/remote/v1/yuyue.jar?version=latest)"
+latest="$(curl -i -m 20 -o /dev/null -s -w %{http_code} https://karili-generic.pkg.coding.net/remote/v1/yuyue.jar?version=latest)"
 echo $latest
-if [ $latest -eq "200" ]
+if [ $latest -ne "404" ]
 then
 	echo latest
 	curl -L "https://karili-generic.pkg.coding.net/remote/v1/yuyue.jar?version=latest" -o yuyue.jar
