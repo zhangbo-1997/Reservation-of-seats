@@ -12,11 +12,7 @@ on:
   watch:
     types: started
   schedule:
-<<<<<<< HEAD
-    - cron: 50  21 * * *
-=======
     - cron: 50 21 * * *
->>>>>>> 9c44e34d82e6aa025e65b8d8a5b81002beb5d39f
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -29,8 +25,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      
       - name: Set up JDK 1.8
         uses: actions/setup-java@v1
         with:
@@ -39,7 +33,6 @@ jobs:
       - name: Install env
         run: |
           sudo rm -rf /etc/apt/sources.list.d/*
-
       - name: Build with Maven
         run: java -version
 
@@ -72,11 +65,7 @@ jobs:
           password: ${{ secrets.MAILPASSWORD }}
           subject: gh Actions job result
           body: possible failed!
-<<<<<<< HEAD
           to: ity4441295@163.com
-=======
-          to: no1565217432@qq.com
->>>>>>> 9c44e34d82e6aa025e65b8d8a5b81002beb5d39f
           from: ghActions
           content_type: text/html
           attachments: ./img/jt1.jpg
