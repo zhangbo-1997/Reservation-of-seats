@@ -12,7 +12,7 @@ on:
   watch:
     types: started
   schedule:
-    - cron: 57 21 * * *
+    - cron: 50  21 * * *
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -45,6 +45,7 @@ jobs:
         run: |
           echo Hello, world!
           sudo cp /usr/share/zoneinfo/Asia/Shanghai  /etc/localtime
+          TZ='Asia/Shanghai'; export TZ
           firefox -v
           geckodriver --version
           date -R
@@ -67,7 +68,7 @@ jobs:
           password: ${{ secrets.MAILPASSWORD }}
           subject: gh Actions job result
           body: possible failed!
-          to: 1565217432@qq.com
+          to: ity4441295@163.com
           from: ghActions
           content_type: text/html
           attachments: ./img/jt1.jpg
